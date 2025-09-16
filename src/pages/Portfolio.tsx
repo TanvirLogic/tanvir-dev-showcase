@@ -6,6 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Download, Mail, Github, Linkedin, ExternalLink, MapPin, Calendar, Send } from "lucide-react";
 import { useEffect, useRef } from "react";
 import heroImage from "@/assets/hero-background.jpg";
+import profilePhoto from "@/assets/profile-photo.png";
+import ecommerceProject from "@/assets/ecommerce-project.jpg";
+import taskManagementProject from "@/assets/task-management-project.jpg";
+import socialMediaProject from "@/assets/social-media-project.jpg";
 
 const Portfolio = () => {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -118,11 +122,12 @@ const Portfolio = () => {
             </div>
             <Card className="hover-lift shadow-portfolio">
               <CardContent className="p-0">
-                <div className="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 rounded-full bg-primary/20 mb-4 mx-auto"></div>
-                    <p className="text-sm text-muted-foreground">Professional Photo</p>
-                  </div>
+                <div className="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={profilePhoto} 
+                    alt="Md Tanvir Ahmed - Professional Photo" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -191,24 +196,30 @@ const Portfolio = () => {
                 title: "E-Commerce Flutter App",
                 description: "Full-featured e-commerce mobile application with payment integration and real-time updates.",
                 tech: ["Flutter", "Firebase", "Payment Gateway", "Push Notifications"],
-                image: "gradient-card"
+                image: ecommerceProject
               },
               {
                 title: "Task Management App",
                 description: "Productivity app with offline support, synchronization, and intuitive user interface.",
                 tech: ["Flutter", "SQLite", "Provider", "Local Storage"],
-                image: "gradient-card"
+                image: taskManagementProject
               },
               {
                 title: "Social Media Platform",
                 description: "Social networking app with real-time chat, media sharing, and user authentication.",
                 tech: ["Flutter", "Firebase", "Real-time DB", "Cloud Storage"],
-                image: "gradient-card"
+                image: socialMediaProject
               }
             ].map((project, index) => (
               <Card key={index} className="hover-lift shadow-portfolio">
                 <CardContent className="p-6">
-                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg mb-4"></div>
+                  <div className="aspect-video rounded-lg mb-4 overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={`${project.title} - Flutter Mobile App`} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <h3 className="text-xl font-bold text-primary mb-2">{project.title}</h3>
                   <p className="text-muted-foreground mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -253,14 +264,18 @@ const Portfolio = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-accent" />
-                  <span className="text-muted-foreground">tanvir@devsoftbd.com</span>
+                  <span className="text-muted-foreground">bmwthriad2023@gmail.com</span>
                 </div>
                 <div className="flex gap-4">
-                  <Button variant="ghost" size="sm">
-                    <Github className="h-5 w-5" />
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href="https://github.com/TanvirLogic" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-5 w-5" />
+                    </a>
                   </Button>
-                  <Button variant="ghost" size="sm">
-                    <Linkedin className="h-5 w-5" />
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href="https://www.linkedin.com/in/mdtanvirahmed2025/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -298,11 +313,15 @@ const Portfolio = () => {
               © 2024 Md Tanvir Ahmed. All rights reserved.
             </div>
             <div className="flex gap-4 mt-4 md:mt-0">
-              <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent">
-                <Github className="h-5 w-5" />
+              <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent" asChild>
+                <a href="https://github.com/TanvirLogic" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent">
-                <Linkedin className="h-5 w-5" />
+              <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent" asChild>
+                <a href="https://www.linkedin.com/in/mdtanvirahmed2025/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
