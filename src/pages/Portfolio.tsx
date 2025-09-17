@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Download, Mail, Github, Linkedin, ExternalLink, MapPin, Calendar, Send } from "lucide-react";
 import { useEffect, useRef } from "react";
 import heroImage from "@/assets/hero-background.jpg";
-import profilePhoto from "@/assets/profile-photo.png";
+import profilePhoto from "@/assets/profile-photo-new.jpg";
 import ecommerceProject from "@/assets/ecommerce-project.jpg";
 import taskManagementProject from "@/assets/task-management-project.jpg";
 import socialMediaProject from "@/assets/social-media-project.jpg";
@@ -53,7 +53,13 @@ const Portfolio = () => {
               {['About', 'Education', 'Experience', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
+                  onClick={() => {
+                    if (item === 'Education') {
+                      window.location.href = '/education';
+                    } else {
+                      scrollToSection(item.toLowerCase());
+                    }
+                  }}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   {item}
@@ -264,12 +270,20 @@ const Portfolio = () => {
 
             <div className="text-center mt-8">
               <p className="text-gray-600 mb-4">Ready to start your learning journey?</p>
-              <button 
-                onClick={() => window.open('tel:01616401375', '_self')}
-                className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
-              >
-                Call Now: 01616401375
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                  onClick={() => window.open('tel:01616401375', '_self')}
+                  className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Call Now: 01616401375
+                </button>
+                <button 
+                  onClick={() => window.location.href = '/education'}
+                  className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300"
+                >
+                  View Detailed Courses
+                </button>
+              </div>
             </div>
           </div>
         </div>
