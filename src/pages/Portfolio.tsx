@@ -50,7 +50,7 @@ const Portfolio = () => {
           <div className="flex items-center justify-between h-16">
             <div className="text-xl font-bold text-primary">Md Tanvir Ahmed</div>
             <div className="hidden md:flex space-x-8">
-              {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
+              {['About', 'Education', 'Experience', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -135,10 +135,150 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Education Section */}
+      <section id="education" ref={(el) => sectionsRef.current[2] = el} className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+            Education & Learning Hub
+          </h2>
+
+          {/* Course Content Areas */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border border-primary/10">
+              <div className="w-12 h-12 bg-primary rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-white font-bold text-xl">D</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Dart & Flutter</h3>
+              <p className="text-gray-600 mb-4">Comprehensive Flutter development tutorials, advanced state management, and modern app architecture patterns.</p>
+              <div className="bg-white rounded-lg p-4 min-h-[200px] border-2 border-dashed border-gray-200">
+                <p className="text-gray-500 text-sm text-center">Daily content updates coming soon...</p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border border-primary/10">
+              <div className="w-12 h-12 bg-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-white font-bold text-xl">P</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">PHP Laravel</h3>
+              <p className="text-gray-600 mb-4">Full-stack web development with Laravel framework, API development, and modern PHP practices.</p>
+              <div className="bg-white rounded-lg p-4 min-h-[200px] border-2 border-dashed border-gray-200">
+                <p className="text-gray-500 text-sm text-center">Daily content updates coming soon...</p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border border-primary/10">
+              <div className="w-12 h-12 bg-green-600 rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-white font-bold text-xl">W</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Web Technologies</h3>
+              <p className="text-gray-600 mb-4">Modern web development including React, JavaScript, and responsive design principles.</p>
+              <div className="bg-white rounded-lg p-4 min-h-[200px] border-2 border-dashed border-gray-200">
+                <p className="text-gray-500 text-sm text-center">Daily content updates coming soon...</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Featured Courses */}
+          <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-8">
+            <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">Featured Courses</h3>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Course 1 */}
+              <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300 border border-primary/10">
+                <div className="bg-gradient-to-br from-primary to-blue-600 rounded-xl p-4 mb-6">
+                  <h4 className="text-white font-bold text-lg">Basic Programming</h4>
+                  <p className="text-blue-100 text-sm">C & C# Fundamentals</p>
+                </div>
+                
+                <div className="mb-4">
+                  <div className="flex items-center mb-2">
+                    <div className="flex text-yellow-400">
+                      {'★'.repeat(5)}
+                    </div>
+                    <span className="ml-2 text-gray-600 font-semibold">4.9</span>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-4">"Excellent foundation course! Clear explanations and hands-on practice." - Sarah M.</p>
+                </div>
+
+                <div className="border-t pt-4">
+                  <div className="text-3xl font-bold text-primary mb-4">৳8,000</div>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <p>📞 Contact: 01616401375</p>
+                    <p>💳 Bkash: 01616401375</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Course 2 */}
+              <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300 border border-primary/10">
+                <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-4 mb-6">
+                  <h4 className="text-white font-bold text-lg">Dart Mastery</h4>
+                  <p className="text-purple-100 text-sm">Modern Dart Programming</p>
+                </div>
+                
+                <div className="mb-4">
+                  <div className="flex items-center mb-2">
+                    <div className="flex text-yellow-400">
+                      {'★'.repeat(4)}{'☆'}
+                    </div>
+                    <span className="ml-2 text-gray-600 font-semibold">4.7</span>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-4">"Great for beginners! Tanvir explains concepts very clearly." - Ahmed K.</p>
+                </div>
+
+                <div className="border-t pt-4">
+                  <div className="text-3xl font-bold text-primary mb-4">৳3,000</div>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <p>📞 Contact: 01616401375</p>
+                    <p>💳 Bkash: 01616401375</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Course 3 */}
+              <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300 border border-primary/10">
+                <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl p-4 mb-6">
+                  <h4 className="text-white font-bold text-lg">Flutter Pro</h4>
+                  <p className="text-cyan-100 text-sm">Complete App Development</p>
+                </div>
+                
+                <div className="mb-4">
+                  <div className="flex items-center mb-2">
+                    <div className="flex text-yellow-400">
+                      {'★'.repeat(5)}
+                    </div>
+                    <span className="ml-2 text-gray-600 font-semibold">5.0</span>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-4">"Best Flutter course! Built 3 apps during the course." - Riya P.</p>
+                </div>
+
+                <div className="border-t pt-4">
+                  <div className="text-3xl font-bold text-primary mb-4">৳5,000</div>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <p>📞 Contact: 01616401375</p>
+                    <p>💳 Bkash: 01616401375</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <p className="text-gray-600 mb-4">Ready to start your learning journey?</p>
+              <button 
+                onClick={() => window.open('tel:01616401375', '_self')}
+                className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
+              >
+                Call Now: 01616401375
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Experience Section */}
       <section
         id="experience"
-        ref={(el) => (sectionsRef.current[2] = el)}
+        ref={(el) => (sectionsRef.current[3] = el)}
         className="section-padding"
       >
         <div className="section-container">
@@ -185,7 +325,7 @@ const Portfolio = () => {
       {/* Projects Section */}
       <section
         id="projects"
-        ref={(el) => (sectionsRef.current[3] = el)}
+        ref={(el) => (sectionsRef.current[4] = el)}
         className="section-padding bg-section-bg"
       >
         <div className="section-container">
@@ -249,7 +389,7 @@ const Portfolio = () => {
       {/* Contact Section */}
       <section
         id="contact"
-        ref={(el) => (sectionsRef.current[4] = el)}
+        ref={(el) => (sectionsRef.current[5] = el)}
         className="section-padding"
       >
         <div className="section-container">
